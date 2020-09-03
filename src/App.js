@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css";
 import Login from "./components/Login";
 import Homepage from "./components/Homepage"
+import ListShare from "./components/ListShare"
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 export default function App() {
@@ -9,7 +10,8 @@ export default function App() {
     <Router>
       <Switch>
         <Route exact path="/" component={Login} />
-        <Route exact path="/home" component={Homepage}/>
+        <Route exact path="/:username" component={Homepage}/>
+        <Route exact path="/view/:username" component={ListShare} />
       </Switch>
     </Router>
   );

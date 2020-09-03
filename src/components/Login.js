@@ -24,7 +24,7 @@ export default function Login(props) {
     fetch(`${API_URL}users`, formObj)
       .then(resp => resp.json())
       .then(data => {
-        props.history.push("/home")
+        props.history.push(`/${username}`)
         localStorage.setItem("username", data.username)
       })
 
