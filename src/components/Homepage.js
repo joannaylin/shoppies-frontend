@@ -81,7 +81,7 @@ export default function Homepage() {
       <div>
         <h2>Results</h2>
         <p>Want to share your nominations? Copy the link and send to a friend!</p>
-        <input ref={clipboard.target} value={`http://localhost:3001/users/${localStorage.getItem("username")}`} readOnly />
+        <input ref={clipboard.target} value={`https://cocky-pasteur-9a4460.netlify.app/users/${localStorage.getItem("username")}`} readOnly />
         <button onClick={clipboard.copy}>Copy</button>
         <ul>{renderResults()}</ul>
       </div>
