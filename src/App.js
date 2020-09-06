@@ -11,7 +11,7 @@ export default function App() {
       <Switch>
         <Route exact path="/" component={Login} />
         <Route exact path="/:username" component={Homepage}/>
-        <Route exact path="/view/:username" component={ListShare} />
+        <Route exact path="/users/:username" component={ListShare} />
       </Switch>
     </Router>
   );

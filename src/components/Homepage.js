@@ -4,7 +4,8 @@ import MovieCard from "./MovieCard";
 import NominationContainer from "./NominationContainer";
 
 const OMDB_URL = "http://www.omdbapi.com/?apikey=937f2766&s=";
-const API_URL = "http://localhost:3000/";
+// const API_URL = "http://localhost:3000/";
+const API_URL = "https://stormy-everglades-06062.herokuapp.com/"
 
 export default function Homepage() {
   const clipboard = useClipboard();
@@ -80,7 +81,7 @@ export default function Homepage() {
       <div>
         <h2>Results</h2>
         <p>Want to share your nominations? Copy the link and send to a friend!</p>
-        <input ref={clipboard.target} value={`http://localhost:3001/view/${localStorage.getItem("username")}`} readOnly />
+        <input ref={clipboard.target} value={`http://localhost:3001/users/${localStorage.getItem("username")}`} readOnly />
         <button onClick={clipboard.copy}>Copy</button>
         <ul>{renderResults()}</ul>
       </div>
