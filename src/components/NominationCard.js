@@ -1,4 +1,5 @@
 import React from "react";
+import "./NominationCard.css"
 
 // const API_URL = "http://localhost:3000/";
 const API_URL = "https://stormy-everglades-06062.herokuapp.com/"
@@ -21,7 +22,7 @@ export default function NominationCard(props) {
     <div>
       <li>
         {props.title} ({props.year_of_release}){" "}
-        <button onClick={() => handleRemoveClick(props.id, props.imdb_id)}>Remove</button>
+        <button className="nomination-card-btn" onClick={() => handleRemoveClick(props.id, props.imdb_id)}>Remove</button>
       </li>
     </div>
   );

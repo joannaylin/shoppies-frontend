@@ -1,0 +1,27 @@
+.homepage {
+  padding-top: 100px;
+  padding-left: 125px;
+  display: grid;
+  grid-template-columns: 350px 350px 450px;
+  grid-template-rows: auto;
+}
+
+#homepage-search-container {
+  grid-column: 1 / span 2;
+}
+
+#homepage-nomination-container {
+  grid-column: 3 
+}
+
+.homepage-text-input {
+  padding: 10px;
+  border-radius: 10px;
+  width: 150px;
+}
+
+.homepage-btn {
+  padding: 10px;
+  border-radius: 10px;
+  margin: 2px;
+}

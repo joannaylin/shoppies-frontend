@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { useClipboard } from "use-clipboard-copy";
 import MovieCard from "./MovieCard";
 import NominationContainer from "./NominationContainer";
+import "./Homepage.css";
 
 const OMDB_URL = "http://www.omdbapi.com/?apikey=937f2766&s=";
 // const API_URL = "http://localhost:3000/";
-const API_URL = "https://stormy-everglades-06062.herokuapp.com/"
+const API_URL = "https://stormy-everglades-06062.herokuapp.com/";
 
 export default function Homepage() {
-  const clipboard = useClipboard();
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
   const [nominated, setNominated] = useState([]);
@@ -28,8 +27,8 @@ export default function Homepage() {
   };
 
   const handleRemoveNomination = (imdbID) => {
-    setNominated(nominated.filter(nom => nom.imdb_id !== imdbID))
-  }
+    setNominated(nominated.filter((nom) => nom.imdb_id !== imdbID));
+  };
 
   const handleChange = (e) => {
     setQuery(e.target.value);
@@ -50,6 +49,7 @@ export default function Homepage() {
 
   const renderResults = () => {
     const nominations = nominated.map((nom) => nom.imdb_id);
+
     return results.map((movie) => (
       <MovieCard
         key={movie.imdbID}
@@ -62,30 +62,38 @@ export default function Homepage() {
   };
 
   return (
-    <div>
-      <h1>Search for a movie to nominate:</h1>
-      {error ? (
-        <p>You've already nominated 5 movies! Please remove a movie if you'd like to change your nominations.</p>
-      ) : null}
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          id="query"
-          name="query"
-          value={query}
-          placeholder="Movie Title"
-          onChange={handleChange}
-        ></input>
-        <input type="submit" />
-      </form>
-      <div>
-        <h2>Results</h2>
-        <p>Want to share your nominations? Copy the link and send to a friend!</p>
-        <input ref={clipboard.target} value={`https://cocky-pasteur-9a4460.netlify.app/users/${localStorage.getItem("username")}`} readOnly />
-        <button onClick={clipboard.copy}>Copy</button>
-        <ul>{renderResults()}</ul>
+    <div className="homepage">
+      <div id="homepage-search-container">
+        <h1>Search for a movie to nominate</h1>
+        {error ? (
+          <p>
+            You've already nominated 5 movies! Please remove a movie if you'd
+            like to change your nominations.
+          </p>
+        ) : null}
+        <form onSubmit={handleSubmit}>
+          <input
+            className="homepage-text-input"
+            type="text"
+            id="query"
+            name="query"
+            value={query}
+            placeholder="Movie Title"
+            onChange={handleChange}
+          ></input>
+          <input className="homepage-btn" type="submit" value="Search" />
+        </form>
+        <br />
+        <div>
+          <h2>Results</h2>
+          <ol>{renderResults()}</ol>
+        </div>
       </div>
-      <NominationContainer movies={nominated} handleRemoveNomination={handleRemoveNomination}/>
+      <NominationContainer
+        id="homepage-nomination-container"
+        movies={nominated}
+        handleRemoveNomination={handleRemoveNomination}
+      />
     </div>
   );
 }
