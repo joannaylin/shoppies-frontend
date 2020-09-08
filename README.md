@@ -20,4 +20,4 @@ Challenge: Build an app to manage movie nominations for upcoming Shoppies.
 - disable nomination button if already nominated
 - display banner when user has 5 nominations
 
-Check out the (backend github here)[https://github.com/joannaylin/shoppies-api]
+Check out the [backend github here](https://github.com/joannaylin/shoppies-api)
