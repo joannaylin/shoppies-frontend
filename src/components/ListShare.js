@@ -12,7 +12,7 @@ export default function ListShare(props) {
     fetch(`${API_URL}users/${username}`)
     .then(resp=> resp.json())
     .then(data => {
-      setMovies([...Suspensedata.movies])
+      setMovies([...data.movies])
       })
   },[props.match.params.username, username])
 
