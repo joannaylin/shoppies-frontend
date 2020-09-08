@@ -1,12 +1,12 @@
 html,
 body {
-  font-family: "Trebuchet MS", sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   margin: 0px;
   height: 100%;
   color:#EFD757;
   background-color: black;
   background-image: url(/background-image.jpg);
-  background-color: black;
+  background-color:#4444;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

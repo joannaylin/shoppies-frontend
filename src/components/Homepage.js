@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
-import MovieCard from "./MovieCard";
 import NominationContainer from "./NominationContainer";
+import MovieContainer from "./MovieContainer.js";
 import "./Homepage.css";
 
 const OMDB_URL = "http://www.omdbapi.com/?apikey=937f2766&s=";
-// const API_URL = "http://localhost:3000/";
 const API_URL = "https://stormy-everglades-06062.herokuapp.com/";
 
 export default function Homepage() {
@@ -12,6 +11,7 @@ export default function Homepage() {
   const [results, setResults] = useState([]);
   const [nominated, setNominated] = useState([]);
   const [error, setError] = useState(false);
+  const [queryError, setQueryError] = useState(false);
 
   useEffect(() => {
     const username = localStorage.getItem("username");
@@ -42,29 +42,19 @@ export default function Homepage() {
     fetch(`${OMDB_URL}${movieQuery}`)
       .then((resp) => resp.json())
       .then((data) => {
-        setResults(data.Search);
-        setQuery("");
+        if (data.Search) {
+          setResults(data.Search);
+          setQuery("");
+        } else {
+          setQueryError(true);
+        }
       });
-  };
-
-  const renderResults = () => {
-    const nominations = nominated.map((nom) => nom.imdb_id);
-
-    return results.map((movie) => (
-      <MovieCard
-        key={movie.imdbID}
-        handleNomination={handleNomination}
-        setError={setError}
-        isNominated={nominations.includes(movie.imdbID)}
-        {...movie}
-      />
-    ));
   };
 
   return (
     <div className="homepage">
       <div id="homepage-search-container">
-        <h1>Search for a movie to nominate</h1>
+        <h1 className="homepage-h1" >Search for a movie to nominate</h1>
         {error ? (
           <p>
             You've already nominated 5 movies! Please remove a movie if you'd
@@ -81,13 +71,18 @@ export default function Homepage() {
             placeholder="Movie Title"
             onChange={handleChange}
           ></input>
-          <input className="homepage-btn" type="submit" value="Search" />
+          <input className="homepage-btn" type="submit" value="SEARCH" />
         </form>
         <br />
-        <div>
-          <h2>Results</h2>
-          <ol>{renderResults()}</ol>
-        </div>
+        {queryError ? <p>No movies match your search.. please try again!</p> : null}
+        {results.length > 0 ? (
+          <MovieContainer
+            results={results}
+            setError={setError}
+            nominated={nominated}
+            handleNomination={handleNomination}
+          />
+        ) : null}
       </div>
       <NominationContainer
         id="homepage-nomination-container"

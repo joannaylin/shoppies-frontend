@@ -5,12 +5,6 @@
   top: 0;
   left: 0;
   text-align: center; 
-  /* background-image: url(/background-image.jpg);
-  background-color: black;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed; */
   margin: auto;
   padding-top: 200px;
 }
@@ -19,6 +13,16 @@
   font-size: 60px;
   text-align: center;
   color: #EFD757;
+  display: inline-block;
+  background:linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+  background-position: -4rem top;
+  background-repeat: repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-animation-name: login-h1;
+  -webkit-animation-duration: 4.4s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-background-size: 50rem 100%; 
 }
 
 .login-h2 {
@@ -29,9 +33,6 @@
 }
 
 .login-text-input {
-  /* outline: 0;
-  border-width: 0 0 2px;
-  border-color: #D2B25E; */
   padding: 10px;
   border-radius: 10px;
   width: 150px;
@@ -41,18 +42,24 @@
   padding: 10px;
   border-radius: 10px;
   margin: 2px;
+  background: black;
+  color: #F5DE50;
 }
 
-@-webkit-keyframes h1 {
-  0% {
-      background-position: -4rem top; /*50px*/
-  }
+.login-span {
+  letter-spacing: 0.1em;
+}
 
-  70% {
-      background-position: 12.5rem top; /*200px*/
-  }
+@keyframes login-h1 {
+    0% {
+        background-position: -4rem top; /*50px*/
+    }
 
-  100% {
-      background-position: 12.5rem top; /*200px*/
-  }
+    50% {
+        background-position: 12.5rem top; /*200px*/
+    }
+
+    100% {
+        background-position: 12.5rem top; /*200px*/
+    }
 }

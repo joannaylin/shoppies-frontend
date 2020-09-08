@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
+import "./ListShare.css"
 
-// const API_URL = "http://localhost:3000/";
 const API_URL = "https://stormy-everglades-06062.herokuapp.com/"
 
 export default function ListShare(props) {
@@ -22,7 +22,7 @@ export default function ListShare(props) {
 
   console.log(props)
   return (
-    <div>
+    <div className="list-share">
       <h1>{`${username}'s Nomination List`}</h1>
       <ul>
         {movies > 0 ? renderList() : <p>No movies have been nominated yet!</p>}

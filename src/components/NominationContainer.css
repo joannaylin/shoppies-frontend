@@ -1,11 +1,19 @@
+.nomination-container-list {
+  color: white;
+}
+
 .nomination-container-share {
   padding: 10px;
   border-radius: 10px;
   width: 350px;
+  background-color: lightgrey;
 }
 
-.nomination-container-btn {
+.nomination-container-copy-btn {
   padding: 10px;
   border-radius: 10px;
   margin: 2px;
+  color: black;
+  background: #F5DE50;
+  font-weight: bold;
 }

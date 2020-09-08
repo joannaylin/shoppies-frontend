@@ -36,7 +36,7 @@ export default function Login(props) {
 
   return (
     <div className="login">
-      <h1 className="login-h1">Welcome to the SHOPPIES</h1>
+      <h1 className="login-h1">Welcome to the   <span className="login-span">SHOPPIES</span></h1>
       <h2 className="login-h2"><i>Vote for your top 5 favorite movies</i></h2>
       <br/>
       <br/>

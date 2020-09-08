@@ -1,3 +1,7 @@
 .nomination-card-btn {
-  
+  padding: 7px;
+  border-radius: 10px;
+  margin-left: 20px;
+  background: #f5de50;;
+  color: black; 
 }

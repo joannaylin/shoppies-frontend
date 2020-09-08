@@ -1,7 +1,6 @@
 import React from "react";
 import "./NominationCard.css"
 
-// const API_URL = "http://localhost:3000/";
 const API_URL = "https://stormy-everglades-06062.herokuapp.com/"
 
 

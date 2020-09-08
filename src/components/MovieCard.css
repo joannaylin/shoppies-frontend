@@ -1,0 +1,16 @@
+.movie-card-li {
+  color: #E0E0E0;
+}
+.movie-card-btn {
+  padding: 7px;
+  border-radius: 10px;
+  margin-left: 20px;
+  color: black;
+  background: #f5de50;
+}
+
+.movie-card-btn:disabled {
+  background: black;
+  color: #f5de50;
+  opacity: 0.7;
+}

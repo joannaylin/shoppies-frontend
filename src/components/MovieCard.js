@@ -1,8 +1,8 @@
 import React from "react";
+import "./MovieCard.css";
 
 // const API_URL = "http://localhost:3000/";
-const API_URL = "https://stormy-everglades-06062.herokuapp.com/"
-
+const API_URL = "https://stormy-everglades-06062.herokuapp.com/";
 
 export default function MovieCard(props) {
   const handleNominateClick = (e) => {
@@ -26,7 +26,7 @@ export default function MovieCard(props) {
       .then((resp) => resp.json())
       .then((data) => {
         if (data.error) {
-          props.setError(true)
+          props.setError(true);
         } else {
           props.handleNomination(data);
         }
@@ -34,11 +34,15 @@ export default function MovieCard(props) {
   };
 
   return (
-    <div>
-      <li>
-        {props.Title} ({props.Year}){" "}
-        <button disabled={props.isNominated} onClick={handleNominateClick}>Nominate</button>
-      </li>
-    </div>
+    <li className="movie-card-li">
+      {props.Title} ({props.Year}){" "}
+      <button
+        className="movie-card-btn"
+        disabled={props.isNominated}
+        onClick={handleNominateClick}
+      >
+        Nominate
+      </button>
+    </li>
   );
 }
