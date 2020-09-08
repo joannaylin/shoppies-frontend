@@ -26,7 +26,7 @@ export default function ListShare(props) {
     <div className="list-share">
       <h1>{`${username}'s Nomination List`}</h1>
       <ul>
-        {movies > 0 ? renderList() : <p>No movies have been nominated yet!</p>}
+        {movies.length > 0 ? renderList() : <p>No movies have been nominated yet!</p>}
       </ul>
     </div>
   );
