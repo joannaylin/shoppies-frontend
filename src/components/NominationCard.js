@@ -1,5 +1,6 @@
 import React from "react";
 import "./NominationCard.css"
+import "../constants.js"
 
 const API_URL = "https://stormy-everglades-06062.herokuapp.com/"
 

@@ -2,9 +2,7 @@ import React, { useState, useEffect } from "react";
 import NominationContainer from "./NominationContainer";
 import MovieContainer from "./MovieContainer.js";
 import "./Homepage.css";
-
-const OMDB_URL = "http://www.omdbapi.com/?apikey=937f2766&s=";
-const API_URL = "https://stormy-everglades-06062.herokuapp.com/";
+import "../constants.js"
 
 export default function Homepage() {
   const [query, setQuery] = useState("");

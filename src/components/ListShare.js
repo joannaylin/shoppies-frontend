@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./ListShare.css"
-
-const API_URL = "https://stormy-everglades-06062.herokuapp.com/"
+import "../constants.js"
 
 export default function ListShare(props) {
   const [movies, setMovies] = useState([])
@@ -21,6 +20,7 @@ export default function ListShare(props) {
   }
 
   console.log(props)
+  console.log(movies)
   return (
     <div className="list-share">
       <h1>{`${username}'s Nomination List`}</h1>
