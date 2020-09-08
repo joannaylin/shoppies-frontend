@@ -1,6 +1,6 @@
 import React from "react";
 import "./MovieCard.css";
-import "../constants.js"
+import { API_URL } from "../constants.js";
 
 export default function MovieCard(props) {
   const handleNominateClick = (e) => {

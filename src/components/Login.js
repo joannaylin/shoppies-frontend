@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import Lottie from "react-lottie";
 import animationData from "../lotties/loading.json";
 import "./Login.css";
-import "../constants.js"
+import { API_URL } from "../constants.js";
+
 
 export default function Login(props) {
   const [username, setUsername] = useState("");

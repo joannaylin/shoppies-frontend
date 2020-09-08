@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import NominationContainer from "./NominationContainer";
 import MovieContainer from "./MovieContainer.js";
 import "./Homepage.css";
-import "../constants.js"
+import { API_URL, OMDB_URL } from "../constants.js";
 
 export default function Homepage() {
   const [query, setQuery] = useState("");
@@ -52,7 +52,7 @@ export default function Homepage() {
   return (
     <div className="homepage">
       <div id="homepage-search-container">
-        <h1 className="homepage-h1" >Search for a movie to nominate</h1>
+        <h1 className="homepage-h1">Search for a movie to nominate</h1>
         {error ? (
           <p>
             You've already nominated 5 movies! Please remove a movie if you'd
@@ -72,7 +72,9 @@ export default function Homepage() {
           <input className="homepage-btn" type="submit" value="SEARCH" />
         </form>
         <br />
-        {queryError ? <p>No movies match your search.. please try again!</p> : null}
+        {queryError ? (
+          <p>No movies match your search.. please try again!</p>
+        ) : null}
         {results.length > 0 ? (
           <MovieContainer
             results={results}
