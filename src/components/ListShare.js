@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import "./ListShare.css"
 import "../constants.js"
 
+const API_URL = "https://stormy-everglades-06062.herokuapp.com/";
+
 export default function ListShare(props) {
   const [movies, setMovies] = useState([])
   const [username, setUsername] = useState("")
