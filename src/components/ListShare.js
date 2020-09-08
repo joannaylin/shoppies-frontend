@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, Suspense } from "react";
 import "./ListShare.css"
 import "../constants.js"
 import { API_URL } from "../constants.js";
@@ -12,7 +12,7 @@ export default function ListShare(props) {
     fetch(`${API_URL}users/${username}`)
     .then(resp=> resp.json())
     .then(data => {
-      setMovies(data.movies)
+      setMovies([...Suspensedata.movies])
       })
   },[props.match.params.username, username])
 
