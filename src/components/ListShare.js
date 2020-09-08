@@ -20,14 +20,12 @@ export default function ListShare(props) {
     return movies.map(movie => <li key={movie.id}>{movie.title} ({movie.year_of_release})</li>)
   }
 
-  console.log(props)
-  console.log(movies)
   return (
     <div className="list-share">
       <h1>{`${username}'s Nomination List`}</h1>
-      <ul>
+      <ol>
         {movies.length > 0 ? renderList() : <p>No movies have been nominated yet!</p>}
-      </ul>
+      </ol>
     </div>
   );
 }

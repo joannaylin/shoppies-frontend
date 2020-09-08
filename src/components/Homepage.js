@@ -4,7 +4,7 @@ import MovieContainer from "./MovieContainer.js";
 import "./Homepage.css";
 import { API_URL, OMDB_URL } from "../constants.js";
 
-export default function Homepage() {
+export default function Homepage(props) {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
   const [nominated, setNominated] = useState([]);
@@ -49,8 +49,15 @@ export default function Homepage() {
       });
   };
 
+  const handleClick = (e) => {
+    localStorage.removeItem("username");
+    props.history.push("/");
+  };
+
+
   return (
     <div className="homepage">
+      <button className="homepage-logout-btn" onClick={handleClick}>LOG OUT</button>
       <div id="homepage-search-container">
         <h1 className="homepage-h1">Search for a movie to nominate</h1>
         {error ? (

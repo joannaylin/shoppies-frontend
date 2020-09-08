@@ -17,7 +17,7 @@ export default function MovieContainer(props) {
 
   return (
     <div>
-      <h1>Results</h1>
+      <h2>Results</h2>
       <ol>{renderResults()}</ol>
     </div>
   );

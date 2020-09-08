@@ -17,3 +17,13 @@
   background: #F5DE50;
   font-weight: bold;
 }
+
+.nomination-container-btn {
+  float: right;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 2px;
+  color: black;
+  background: #F5DE50;
+  font-weight: bold;
+}

@@ -24,7 +24,9 @@ export default function NominationContainer(props) {
       {props.movies.length === 5 ? (
         <h3>You have nominated 5 movies for the Shoppies!</h3>
       ) : null}
-      <p><i>Share your nominations with your friends using the link below.</i></p>
+      <p>
+        <i>Share your nominations with your friends using the link below.</i>
+      </p>
       <input
         className="nomination-container-share"
         ref={clipboard.target}
@@ -33,7 +35,10 @@ export default function NominationContainer(props) {
         )}`}
         readOnly
       />
-      <button className="nomination-container-copy-btn" onClick={clipboard.copy}>
+      <button
+        className="nomination-container-copy-btn"
+        onClick={clipboard.copy}
+      >
         COPY
       </button>
       <ol className="nomination-container-list">{renderNominations()}</ol>
